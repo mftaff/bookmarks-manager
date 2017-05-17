@@ -1,13 +1,12 @@
-# Skeleton rails-app
+# Bookmark-manager
 
-### This is the basic starter for all bloc projects
+### Rails app that allows:
 
-- Rails installed
-- Basic landing page
-- Basic config/gemfile settings
-- Devise installed
+- User to bookmark URLs via email
+- Peruse other user's bookmarks
+- Maintain a personal index of categorized bookmarks
 
-This app should be compatible with any new Bloc.io project
+This app is a Bloc.io project
 
 ---
 ### Technical Details
