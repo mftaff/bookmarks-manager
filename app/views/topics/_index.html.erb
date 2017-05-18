@@ -1,0 +1,9 @@
+<% topics.each do |topic| %>
+    <div>
+        <h4><%= link_to "#{topic.title}", topic %></h4>
+        
+        <div>
+            <%= render partial: 'topics_bookmarks', locals: { bookmarks: topic.bookmarks } %>
+        </div>
+    </div>
+<% end %>

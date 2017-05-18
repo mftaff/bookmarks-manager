@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Add Title Here!</title>
+  <title>Bookmarks-manager</title>
   <meta name="viewport" content="width=devise-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -11,6 +11,7 @@
     <div class="container">
       <div class="nav">
         <%= link_to "Home", root_path %>
+        <%= link_to "My Topics", topics_path %>
         <%= link_to "About", welcome_about_path %>
       </div>
       
