@@ -1,7 +1,9 @@
 <% topics.each do |topic| %>
     <div>
-        <h4><%= link_to "#{topic.title}", topic %></h4>
-        
+        <div>
+            <h4><%= link_to "#{topic.title}", topic %></h4>
+            <%= link_to "delete", topic, method: :delete, data: { confirm: "Are you sure you want to delete \"#{topic.title}\"?" }%>
+        </div>
         <div>
             <%= render partial: 'topics_bookmarks', locals: { bookmarks: topic.bookmarks } %>
         </div>

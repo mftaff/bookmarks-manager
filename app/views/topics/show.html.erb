@@ -1,3 +1,4 @@
 <h2><%= @topic.title %></h2>
+<%= link_to "edit", edit_topic_path, class: "btn btn-info" %>
 
 <%= render partial: 'topics_bookmarks', locals: { bookmarks: @topic.bookmarks } %>

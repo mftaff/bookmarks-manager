@@ -1,0 +1,15 @@
+<%= form_for [topic] do |f| %>
+    <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control", placeholder: "Enter Title...", autofocus: true %>    
+    </div>  
+    
+    <div class="form-group">
+        <% if topic.new_record? %>
+            <%= f.submit "Create", class: "btn btn-success" %>
+        <% else %>
+            <%= f.submit "Save changes", class: "btn btn-success" %>
+        <% end %>
+        <%= link_to "cancel", :back, class: 'btn btn-info' %>
+    </div>
+<% end %>
