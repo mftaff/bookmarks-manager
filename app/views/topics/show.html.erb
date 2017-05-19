@@ -2,3 +2,5 @@
 <%= link_to "edit", edit_topic_path, class: "btn btn-info" %>
 
 <%= render partial: 'topics_bookmarks', locals: { bookmarks: @topic.bookmarks } %>
+
+<%= link_to "new bookmark", new_topic_bookmark_path(@topic) %> 

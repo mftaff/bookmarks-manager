@@ -1,0 +1,15 @@
+<%= form_for [topic, bookmark] do |f| %>
+    <div class="form-group">
+        <%= f.label :url %>
+        <%= f.text_field :url, class: "form-control", placeholder: "Enter Bookmark's URL...", autofocus: true %>    
+    </div>  
+    
+    <div class="form-group">
+        <% if bookmark.new_record? %>
+            <%= f.submit "Save", class: "btn btn-success" %>
+        <% else %>
+            <%= f.submit "Save changes", class: "btn btn-success" %>
+        <% end %>
+        <%= link_to "cancel", :back, class: 'btn btn-info' %>
+    </div>
+<% end %>

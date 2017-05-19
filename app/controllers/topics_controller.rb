@@ -13,7 +13,7 @@ class TopicsController < ApplicationController
   end
   
   def create
-    @topic = current_user.topics.new(topics_params)
+    @topic = current_user.topics.new(topic_params)
     
     if @topic.save
       flash[:notice] = "Topic was saved successfully."
@@ -28,7 +28,7 @@ class TopicsController < ApplicationController
   end
   
   def update
-    @topic.assign_attributes(topics_params)
+    @topic.assign_attributes(topic_params)
     
     if @topic.save
       flash[:notice] = "Topic was updated successfully."
@@ -50,7 +50,7 @@ class TopicsController < ApplicationController
   
   private
   
-  def topics_params
+  def topic_params
     params.require(:topic).permit(:title)
   end
   
