@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  post :incoming, to: 'incoming#create'
+  
   resources :topics do
     resources :bookmarks, except: [:index]  
   end
@@ -9,3 +11,4 @@ Rails.application.routes.draw do
 
   get 'welcome/about'
 end
+
