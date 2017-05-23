@@ -6,6 +6,7 @@ class TopicsController < ApplicationController
   end
 
   def show
+    authorize @topic
   end
 
   def new
@@ -14,6 +15,8 @@ class TopicsController < ApplicationController
   
   def create
     @topic = current_user.topics.new(topic_params)
+    
+    authorize @topic
     
     if @topic.save
       flash[:notice] = "Topic was saved successfully."
@@ -30,6 +33,8 @@ class TopicsController < ApplicationController
   def update
     @topic.assign_attributes(topic_params)
     
+    authorize @topic
+    
     if @topic.save
       flash[:notice] = "Topic was updated successfully."
       redirect_to action: :index
@@ -40,6 +45,8 @@ class TopicsController < ApplicationController
   end
   
   def destroy
+    authorize @topic
+    
     if @topic.destroy
       flash[:notice] = "\"#{@topic.title}\" was deleted successfully."
     else

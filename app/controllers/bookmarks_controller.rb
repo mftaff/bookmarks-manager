@@ -3,6 +3,7 @@ class BookmarksController < ApplicationController
   before_action :get_parent_topic, only: [:new, :create, :edit]
   
   def show
+    authorize @bookmark
   end
 
   def new
@@ -11,6 +12,8 @@ class BookmarksController < ApplicationController
   
   def create
     @bookmark = @topic.bookmarks.new(bookmark_params)
+
+    authorize @bookmark
 
     if @bookmark.save
       flash[:notice] = "New Bookmark added to #{@bookmark.topic.title}"
@@ -27,6 +30,8 @@ class BookmarksController < ApplicationController
   def update
     @bookmark.assign_attributes(bookmark_params)
     
+    authorize @bookmark
+    
     if @bookmark.save
       flash[:notice] = "Bookmark updated successfully."
       redirect_to topics_path
@@ -37,6 +42,8 @@ class BookmarksController < ApplicationController
   end
   
   def destroy
+    authorize @bookmark
+    
     if @bookmark.destroy
       flash[:notice] = "Bookmark deleted successfully."
     else

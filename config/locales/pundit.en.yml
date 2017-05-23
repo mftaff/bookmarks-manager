@@ -1,0 +1,17 @@
+en:
+  pundit:
+    default: "Sorry... You do not have permission to perform this action."
+    topic_policy: 
+        show?: "You can only view your own topics."
+        new?: "You need to sign in to create new topics."
+        create?: "You need to sign in to create new topics."
+        edit?: "You can only update your own topics."
+        update?: "You can only update your own topics."
+        destroy?: "You can only delete your own topics."  
+    bookmark_policy: 
+        show?: "You can only view your own bookmarks."
+        new?: "You need to sign in to create new bookmarks."
+        create?: "You need to sign in to create new bookmarks."
+        edit?: "You can only update your own bookmarks."
+        update?: "You can only update your own bookmarks."
+        destroy?: "You can only delete your own bookmarks." 

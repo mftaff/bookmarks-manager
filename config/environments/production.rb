@@ -76,4 +76,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  
+  # Sets the default_url for the mailer
+  config.action_mailer.default_url_options = { host: 'https://bloc-bookmarks-manager.herokuapp.com/' }
 end
