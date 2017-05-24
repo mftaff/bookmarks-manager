@@ -17,7 +17,7 @@ class BookmarksController < ApplicationController
 
     if @bookmark.save
       flash[:notice] = "New Bookmark added to #{@bookmark.topic.title}"
-      redirect_to topics_path
+      redirect_to @bookmark.topic
     else
       flash.now[:alert] = "Error creating Bookmark. Please try again..."
       render :new
@@ -34,7 +34,7 @@ class BookmarksController < ApplicationController
     
     if @bookmark.save
       flash[:notice] = "Bookmark updated successfully."
-      redirect_to topics_path
+      redirect_to @bookmark.topic
     else
       flash.now[:alert] = "Error updating bookmark. Please try again..."
       render :edit
@@ -49,7 +49,8 @@ class BookmarksController < ApplicationController
     else
       flash[:alert] = "There was an error deleting the Bookmark."
     end
-    redirect_to topics_path
+    # redirect_to(request.referrer || root_path) # request.referrer blows up
+    redirect_to root_path # could be topics_path if desired
   end
   
   private

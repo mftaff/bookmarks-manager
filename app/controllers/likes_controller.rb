@@ -16,7 +16,7 @@ class LikesController < ApplicationController
     else
       flash[:alert] = "Like not saved... ERROR!"
     end
-    redirect_to(request.referrer || @bookmark.topic)
+    redirect_to(request.referrer || root_path) # could be @bookmark.topic
   end
   
   def destroy
@@ -29,7 +29,7 @@ class LikesController < ApplicationController
     else
       flash[:alert] = "Bookmark still Liked... ERROR!!"
     end
-    redirect_to(request.referrer || @bookmark.topic)
+    redirect_to(request.referrer || root_path) # could be @bookmark.topic
   end
   
   private
