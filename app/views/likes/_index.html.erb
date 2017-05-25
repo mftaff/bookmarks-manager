@@ -1,10 +1,10 @@
 <% likes.each do |like| %>
     <div>
-        <%= link_to "/topics/#{like.bookmark.topic_id}/bookmarks/#{like.bookmark_id}/likes/#{like.id}", class: 'btn btn-danger', method: :delete do %>
+        <%= link_to [like.bookmark.topic, like.bookmark, like], class: 'btn btn-danger', method: :delete do %>  
           <i class="glyphicon glyphicon-star-empty"> </i>&nbsp; Unlike
         <% end %>
         <h4><%= like.bookmark.url %></h4>
-        <%= link_to "edit", "/topics/#{like.bookmark.topic_id}/bookmarks/#{like.bookmark_id}/edit", class: "btn btn-info" %>
-        <%= link_to "delete", "/topics/#{like.bookmark.topic_id}/bookmarks/#{like.bookmark_id}", method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure you want to remove this Bookmark?" } %>
+        <%= link_to "edit", [like.bookmark.topic, like.bookmark], class: "btn btn-info" %>
+        <%= link_to "delete", [like.bookmark.topic, like.bookmark], method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure you want to remove this Bookmark?" } %>
     </div>
 <% end %>
