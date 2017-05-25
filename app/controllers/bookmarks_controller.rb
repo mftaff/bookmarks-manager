@@ -49,7 +49,7 @@ class BookmarksController < ApplicationController
     else
       flash[:alert] = "There was an error deleting the Bookmark."
     end
-    # redirect_to(request.referrer || root_path) # request.referrer blows up
+    # we will need a way to track from what page the user came from. root or topics
     redirect_to root_path # could be topics_path if desired
   end
   
