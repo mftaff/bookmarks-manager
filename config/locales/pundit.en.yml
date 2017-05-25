@@ -1,17 +1,22 @@
 en:
   pundit:
-    default: "Sorry... You do not have permission to perform this action."
+    default: "Sorry... You do not have permission to perform this action. Redirecting..."
     topic_policy: 
-        show?: "You can only view your own topics."
-        new?: "You need to sign in to create new topics."
-        create?: "You need to sign in to create new topics."
-        edit?: "You can only update your own topics."
-        update?: "You can only update your own topics."
-        destroy?: "You can only delete your own topics."  
+        show?: "Action Denied! You can only view your own topics. Redirecting..."
+        new?: "Action Denied! You can only create topics associated with your account. Redirecting..."
+        create?: "Action Denied! You can only create topics associated with your account. Redirecting..."
+        edit?: "Action Denied! You can only update topics associated with your account. Redirecting..."
+        update?: "Action Denied! You can only update topics associated with your account. Redirecting..."
+        destroy?: "Action Denied! You can only destroy topics associated with your account. Redirecting..." 
     bookmark_policy: 
-        show?: "You can only view your own bookmarks."
-        new?: "You need to sign in to create new bookmarks."
-        create?: "You need to sign in to create new bookmarks."
-        edit?: "You can only update your own bookmarks."
-        update?: "You can only update your own bookmarks."
-        destroy?: "You can only delete your own bookmarks." 
+        show?: "Action Denied! You can only view your own bookmarks. Redirecting..."
+        new?: "Action Denied! You can only create bookmarks associated with your account. Redirecting..."
+        create?: "Action Denied! You can only create bookmarks associated with your account. Redirecting..."
+        edit?: "Action Denied! You can only update bookmarks associated with your account. Redirecting..."
+        update?: "Action Denied! You can only update bookmarks associated with your account. Redirecting..."
+        destroy?: "Action Denied! You can only destroy bookmarks associated with your account. Redirecting..."   
+    user_policy: 
+        show?: "Action Denied! You can only view your own profile page. Redirecting..."
+    Like_policy: 
+        create?: "Action Denied! You can only like your own bookmarks. Redirecting..."
+        destroy?: "Action Denied! You can only unlike your own bookmarks. Redirecting...s" 

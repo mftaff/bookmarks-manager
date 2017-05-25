@@ -22,5 +22,5 @@ class ApplicationController < ActionController::Base
     
     flash[:alert] = t "#{policy_name}.#{exception.query}", scope: "pundit", default: :default
     redirect_to(request.referrer || root_path)
- end
+  end
 end
