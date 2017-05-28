@@ -1,12 +1,14 @@
-<h1><%= current_user.email %>'s Profile</h1>
-
-<div>
-    <h2>Your Topics</h2>
-    <%= render partial: 'index', locals: { topics: @topics } %>
-</div>
-<br><br>
-<div>
-    <h2>Your Liked Bookmarks</h2>
+<div class="body-content">
+    <h3>My Bookmarks</h3>
     
-    <%= render partial: 'likes/index', locals: { likes: @likes } %>
+    <div class="all-topics">
+        <h2>By Topic:</h2>
+        <%= render partial: 'index', locals: { topics: @topics } %>
+    </div>
+    <br><br>
+    <div class="all-likes">
+        <h2>Liked Bookmarks:</h2>
+        
+        <%= render partial: 'likes/index', locals: { likes: @likes } %>
+    </div>
 </div>

@@ -1,5 +1,8 @@
-<h2>Bookmarks sorted by topics</h2>
-
-<%= render partial: 'index', locals: { topics: @topics } %>
-
-<%= link_to "New Topic", new_topic_path, class: 'btn btn-success' %>
+<div class="body-content">
+    <h3>My Topics</h3>
+    
+    <div class="all-topics">
+        <%= render partial: 'index', locals: { topics: @topics } %>
+        <%= link_to "New Topic", new_topic_path, class: 'btn btn-success new-topic' %>
+    </div>
+</div>

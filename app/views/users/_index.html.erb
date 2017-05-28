@@ -1,11 +1,11 @@
 <% topics.each do |t| %>
-    <div>
+    <div class="topic-group" id="topic#<%= t.id %>">
         <h4><%= link_to "#{t.title}", t %></h4>
-        <div>
-            <% t.bookmarks.each do |b| %>
+        <% t.bookmarks.each do |b| %>
+            <div class="bookmark" id="bookmark#<%= b.id %>">
                 <%= render partial: 'likes/like', locals: { topic: b.topic, bookmark: b } %> 
                 <%= link_to "#{b.url}", [b.topic, b] %>
-            <% end %>
-        </div>
+            </div>
+        <% end %>
     </div>
 <% end %>

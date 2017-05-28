@@ -1,12 +1,7 @@
 <% topics.each do |topic| %>
-    <div>
-        <div>
-            <h4><%= link_to "#{topic.title}", topic %></h4>
-            <%= link_to "delete", topic, method: :delete, data: { confirm: "Are you sure you want to delete \"#{topic.title}\"?" }%>
-        </div>
-        <div>
-            <!-- Add logic to show first two bookmarks, then a message "x more..." -->
-            <%= pluralize(topic.bookmarks.count, "bookmark") %> 
-        </div>
+    <div class="topic", id="topic#<%= topic.id %>">
+        <h4><%= link_to "#{topic.title}", topic %></h4>
+        <small>(has <%= pluralize(topic.bookmarks.count, "bookmark") %>)</small>
+        <%= link_to "delete", topic, method: :delete, class: 'btn btn-danger btn-xs', data: { confirm: "Are you sure you want to delete \"#{topic.title}\"?" }%>
     </div>
 <% end %>

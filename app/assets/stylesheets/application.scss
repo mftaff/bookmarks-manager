@@ -21,9 +21,12 @@ body {
     background-color: #f5f0d9;
 }
 
+
+// adds all the styling to the navbar
 .nav {
     background-color: #f7ebb8;
     padding: 3px;
+    margin-bottom: 8px;
     border-radius: 2px;
     box-shadow: 0px 2px 7px #888888;
     
@@ -48,6 +51,167 @@ body {
         p {
             font-size: 16px;
             display: inline;
+        }
+    }
+}
+
+
+// gives flash messages a fixed space at the top of the screen
+.flash {
+    min-height: 70px;
+    
+    .alert {
+        margin-bottom: 0;
+    }
+}
+
+// template styling for the app's body
+.body-content {
+    background-color: rgba(255, 247, 119, 0.2);
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px dotted #ffffff;
+    
+    h3 {
+        text-align: center;
+        background-color: #f7f2cc;
+    }
+    
+    .all-topics {
+        padding: 3px;
+        margin: 5px;
+        border-left: 1px solid white;
+        border-top: 1px solid white;
+        border-radius: 4px;
+        box-shadow: 4px 5px 7px grey;
+        
+        
+        // for home page view (user show)
+        .topic-group {
+            display: inline-block;
+            vertical-align: top;
+            padding: 3px;
+            min-width: 49%;
+            
+            h4 {
+                text-align: center;
+            }
+            
+            a {
+                color: grey;
+                text-decoration: none;
+            }
+            
+            .bookmark {
+                padding: 2px;
+                margin-bottom: 2px;
+                border-radius: 3px;
+                background-color: #f7b292;
+                
+                a {
+                    color: #7b2e00;
+                }
+                
+                &:hover {
+                    background-color: #de9f82;
+                }
+                
+                &:nth-child(even) {
+                    background-color: #f7d29c;
+                    
+                    &:hover {
+                        background-color: #d6b586;
+                    }
+                }
+                
+                .like-btn {
+                    text-align: right;
+                    
+                    a {
+                        color: white;
+                    }
+                }
+            }
+        }
+        
+        // for topic view (topic index)
+        .topic {
+            display: inline-block;
+            vertical-align: top;
+            min-width: 30%;
+            margin: 4px;
+            text-align: center;
+            padding-bottom: 2px;
+            border-radius: 3px;
+            background-color: #f7b292;
+            
+            a {
+                color: #7b2e00;
+                text-decoration: none;
+            }
+            
+            &:hover {
+                background-color: #de9f82;
+            }
+            
+            &:nth-child(even) {
+                background-color: #f7d29c;
+                
+                &:hover {
+                    background-color: #d6b586;
+                }
+            }
+        }
+        
+        .new-topic {
+            display: inherit;
+            background-color: grey;
+            width: 140px;
+            margin: auto;
+        }
+    }
+    
+    .all-likes {
+        padding: 3px;
+        margin: 5px;
+        border-left: 1px solid white;
+        border-top: 1px solid white;
+        border-radius: 4px;
+        box-shadow: 4px 5px 7px grey;
+        
+        .bookmark {
+            position: relative;
+            padding: 6px;
+            margin-bottom: 4px;
+            border-radius: 3px;
+            background-color: #f7b292;
+            
+            a {
+                color: #7b2e00;
+                text-decoration: none;
+                
+                &.topic-ref {
+                    color: #656354;;
+                }
+            }
+            
+            &:hover {
+                background-color: #de9f82;
+            }
+            
+            &:nth-child(even) {
+                background-color: #f7d29c;
+                
+                &:hover {
+                    background-color: #d6b586;
+                }
+            }
+            
+            .edit-delete {
+                position: absolute;
+                right: 2px;
+                top: 1.5px;
+            }
         }
     }
 }
