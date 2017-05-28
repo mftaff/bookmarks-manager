@@ -1,5 +1,5 @@
 <% bookmarks.each do |mark| %>
-    <div>
+    <div class="bookmark">
         <%= render partial: 'likes/like', locals: { topic: mark.topic, bookmark: mark } %>
         <%= link_to "#{mark.url}", [mark.topic, mark] %>
     </div>

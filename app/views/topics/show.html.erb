@@ -1,6 +1,10 @@
-<h2><%= @topic.title %></h2>
-<%= link_to "edit", edit_topic_path, class: "btn btn-info" %>
+<div class="body-content">
+    <h3><%= @topic.title %> <%= link_to "edit", edit_topic_path, class: "topic-edit" %></h3>
+    
+    <div class="all-bookmarks">
+        <%= render partial: 'topics_bookmarks', locals: { bookmarks: @topic.bookmarks } %>
+        <%= link_to "new bookmark", new_topic_bookmark_path(@topic), class: "btn btn-success new-bookmark" %> 
+    </div>
+    
 
-<%= render partial: 'topics_bookmarks', locals: { bookmarks: @topic.bookmarks } %>
-
-<%= link_to "new bookmark", new_topic_bookmark_path(@topic) %> 
+</div>
