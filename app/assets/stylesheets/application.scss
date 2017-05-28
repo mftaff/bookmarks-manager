@@ -316,3 +316,39 @@ body {
         }
     }
 }
+
+// Devise custom views
+div.devise-container {
+    width: 80%;
+    margin: auto;
+    background-color: rgba(255, 247, 119, 0.2);
+    color: #586471;
+    text-align: center;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px dotted #ffffff;
+    
+    & a {
+        color: #6888ae;
+    }
+    
+    & form input.devise-field {
+        width: 40%;
+        margin: auto;
+    }
+    
+    & #error_explanation {
+        background-color: rgba(255, 0, 0, .1);
+        text-align: left;
+        width: 50%;
+        margin: auto;
+        padding: 0px 10px;
+        border: 1px solid rgba(255, 0, 0, .2);
+        border-radius: 5%;
+        margin-bottom: 1em;
+        
+        & h2 {
+            text-align: center;
+        }
+    }
+}
