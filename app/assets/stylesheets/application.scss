@@ -16,3 +16,38 @@
  
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+    background-color: #f5f0d9;
+}
+
+.nav {
+    background-color: #f7ebb8;
+    padding: 3px;
+    border-radius: 2px;
+    box-shadow: 0px 2px 7px #888888;
+    
+    a {
+        color: #a75454;
+        font-size: 16px;
+        padding: 2px 1px;
+        text-decoration: none;
+        
+        &:hover {
+            color: black;
+            background-color: #efe09e;
+            border-top: 1px solid #b9b088;
+            border-bottom: 1px solid #b9b088;
+            border-radius: 4px;
+        }
+    }
+    
+    .user-ctrl {
+        float: right;
+        
+        p {
+            font-size: 16px;
+            display: inline;
+        }
+    }
+}
