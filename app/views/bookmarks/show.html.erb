@@ -2,7 +2,7 @@
     <div class="bookmark-show">
         <h4>
             <%= render partial: 'likes/like', locals: { topic: @bookmark.topic, bookmark: @bookmark } %>
-            <%= @bookmark.url %>
+            <%= link_to @bookmark.url, "#{@bookmark.url}" , target: :_blank %>
         </h4>
         
         <div class="edit-delete">

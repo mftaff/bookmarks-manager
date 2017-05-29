@@ -306,8 +306,21 @@ body {
         margin: 2px;
         overflow-x: auto;
         
+        a {
+            color: #ad6a5c;
+            text-decoration: none;
+            
+            &:hover {
+                color: #bb8d70;
+            }
+        }
+        
         .like-btn {
             display: inline-block;
+            
+            a {
+                color: white;
+            }
         }
         
         .edit-delete {

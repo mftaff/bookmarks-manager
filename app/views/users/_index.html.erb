@@ -5,7 +5,8 @@
             <% if t.bookmarks.any? %>
                 <% t.bookmarks.each do |b| %>
                     <div class="bookmark" id="bookmark#<%= b.id %>">
-                        <%= render partial: 'likes/like', locals: { topic: b.topic, bookmark: b } %> 
+                        <%= render partial: 'likes/like', locals: { topic: b.topic, bookmark: b } %>
+                        <%= render partial: 'bookmarks/goto_site', locals: { bookmark: b } %>
                         <%= link_to "#{b.url}", [b.topic, b] %>
                     </div>
                 <% end %>

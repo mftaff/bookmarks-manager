@@ -4,6 +4,7 @@
             <%= link_to [like.bookmark.topic, like.bookmark, like], class: 'btn btn-danger btn-xs', method: :delete do %>  
               <i class="glyphicon glyphicon-star-empty"> </i>&nbsp; Unlike
             <% end %>
+            <%= render partial: 'bookmarks/goto_site', locals: { bookmark: like.bookmark } %>
             <%= link_to "#{like.bookmark.url}", [like.bookmark.topic, like.bookmark] %>
             <%= link_to "##{like.bookmark.topic.title.downcase.gsub(" ", "")}", [like.bookmark.topic], class: "topic-ref" %>
             <div class="edit-delete">
