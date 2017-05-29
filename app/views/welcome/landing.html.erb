@@ -1,2 +1,11 @@
-<h1>Welcome#landing</h1>
-<p>Find me in app/views/welcome/landing.html.erb</p>
+<div class="body-content">
+    <h3>Hi</h3>
+    <div class="text-center">
+        <p>Bookmark managing awaits! Please go ahead and <%= link_to "sign in", new_user_session_path, :class => 'navbar-link'  %>
+        so you can begin...
+        </p>
+        <br>
+        <P>Already have an account? <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link'  %></P>
+        <p>New here? <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link'  %></p>
+    </div>
+</div>
