@@ -1,11 +1,19 @@
-<% topics.each do |t| %>
-    <div class="topic-group" id="topic#<%= t.id %>">
-        <h4><%= link_to "#{t.title}", t %></h4>
-        <% t.bookmarks.each do |b| %>
-            <div class="bookmark" id="bookmark#<%= b.id %>">
-                <%= render partial: 'likes/like', locals: { topic: b.topic, bookmark: b } %> 
-                <%= link_to "#{b.url}", [b.topic, b] %>
-            </div>
-        <% end %>
-    </div>
+<% if topics.any? %>
+    <% topics.each do |t| %>
+        <div class="topic-group" id="topic#<%= t.id %>">
+            <h4><%= link_to "#{t.title}", t %></h4>
+            <% if t.bookmarks.any? %>
+                <% t.bookmarks.each do |b| %>
+                    <div class="bookmark" id="bookmark#<%= b.id %>">
+                        <%= render partial: 'likes/like', locals: { topic: b.topic, bookmark: b } %> 
+                        <%= link_to "#{b.url}", [b.topic, b] %>
+                    </div>
+                <% end %>
+            <% else %>
+                <p class="text-center">'<%= t.title %>' has no bookmarks yet.</p>
+            <% end %>
+        </div>
+    <% end %>
+<% else %>
+    <p>You have no topics or bookmarks to show right now.</p>
 <% end %>

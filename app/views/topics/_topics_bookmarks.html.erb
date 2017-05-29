@@ -1,6 +1,10 @@
-<% bookmarks.each do |mark| %>
-    <div class="bookmark">
-        <%= render partial: 'likes/like', locals: { topic: mark.topic, bookmark: mark } %>
-        <%= link_to "#{mark.url}", [mark.topic, mark] %>
-    </div>
+<% if bookmarks.any? %>   
+    <% bookmarks.each do |mark| %>
+        <div class="bookmark">
+            <%= render partial: 'likes/like', locals: { topic: mark.topic, bookmark: mark } %>
+            <%= link_to "#{mark.url}", [mark.topic, mark] %>
+        </div>
+    <% end %>
+<% else %>
+    <p class="text-center">This topic has no bookmarks right now.</p>
 <% end %>

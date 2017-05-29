@@ -1,13 +1,17 @@
-<% likes.each do |like| %>
-    <div class="bookmark", id="bookmark#<%= like.bookmark.id %>">
-        <%= link_to [like.bookmark.topic, like.bookmark, like], class: 'btn btn-danger btn-xs', method: :delete do %>  
-          <i class="glyphicon glyphicon-star-empty"> </i>&nbsp; Unlike
-        <% end %>
-        <%= link_to "#{like.bookmark.url}", [like.bookmark.topic, like.bookmark] %>
-        <%= link_to "##{like.bookmark.topic.title.downcase.gsub(" ", "")}", [like.bookmark.topic], class: "topic-ref" %>
-        <div class="edit-delete">
-            <%= link_to "edit", [like.bookmark.topic, like.bookmark], class: "btn btn-info btn-sm" %>
-            <%= link_to "delete", [like.bookmark.topic, like.bookmark], method: :delete, class: "btn btn-danger btn-sm", data: { confirm: "Are you sure you want to remove this Bookmark?" } %>
+<% if likes.any? %>
+    <% likes.each do |like| %>
+        <div class="bookmark", id="bookmark#<%= like.bookmark.id %>">
+            <%= link_to [like.bookmark.topic, like.bookmark, like], class: 'btn btn-danger btn-xs', method: :delete do %>  
+              <i class="glyphicon glyphicon-star-empty"> </i>&nbsp; Unlike
+            <% end %>
+            <%= link_to "#{like.bookmark.url}", [like.bookmark.topic, like.bookmark] %>
+            <%= link_to "##{like.bookmark.topic.title.downcase.gsub(" ", "")}", [like.bookmark.topic], class: "topic-ref" %>
+            <div class="edit-delete">
+                <%= link_to "edit", [like.bookmark.topic, like.bookmark], class: "btn btn-info btn-sm" %>
+                <%= link_to "delete", [like.bookmark.topic, like.bookmark], method: :delete, class: "btn btn-danger btn-sm", data: { confirm: "Are you sure you want to remove this Bookmark?" } %>
+            </div>
         </div>
-    </div>
+    <% end %>
+<% else %>
+    <p>You have no liked bookmarks right now.</p>
 <% end %>
