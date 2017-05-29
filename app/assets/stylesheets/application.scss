@@ -304,6 +304,7 @@ body {
     .bookmark-show {
         position: relative;
         margin: 2px;
+        overflow-x: auto;
         
         .like-btn {
             display: inline-block;
